@@ -1,0 +1,18 @@
+<ossec_config>
+
+  <!-- Collect Linux authentication logs from the Linux victim -->
+  <localfile>
+    <location>/var/log/auth.log</location>
+    <log_format>syslog</log_format>
+  </localfile>
+
+  <!-- Active Response for Linux SSH brute-force detection -->
+  <active-response>
+    <disabled>no</disabled>
+    <command>firewall-drop</command>
+    <location>local</location>
+    <rules_id>100131</rules_id>
+    <timeout>3600</timeout>
+  </active-response>
+
+</ossec_config>
